@@ -1,14 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TrafficLights" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +22,68 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Road" translatesAutoresizingMaskIntoConstraints="NO" id="us9-WZ-2PK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TrafficLight" translatesAutoresizingMaskIntoConstraints="NO" id="ggx-Pf-04M">
+                                <rect key="frame" x="16" y="20" width="343" height="291"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ggx-Pf-04M" secondAttribute="height" multiplier="343:291" id="7cp-Gd-qeW"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAY-nH-dlx">
+                                <rect key="frame" x="16" y="319" width="343" height="100"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6G-a2-iMz">
+                                <rect key="frame" x="132" y="506" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="w6G-a2-iMz" secondAttribute="height" multiplier="1:1" id="vz4-Vi-hvW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Start" backgroundImage="redButton">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="StartStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g5R-Jc-oXQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DAY-nH-dlx" firstAttribute="top" secondItem="ggx-Pf-04M" secondAttribute="bottom" constant="8" id="FlE-zN-Sxt"/>
+                            <constraint firstItem="us9-WZ-2PK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Glk-0k-CN5"/>
+                            <constraint firstItem="w6G-a2-iMz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="116" id="KAa-mT-U6q"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="us9-WZ-2PK" secondAttribute="bottom" id="LDo-pq-ka1"/>
+                            <constraint firstItem="ggx-Pf-04M" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="NWp-2L-SDN"/>
+                            <constraint firstAttribute="trailing" secondItem="us9-WZ-2PK" secondAttribute="trailing" id="R81-1w-qBU"/>
+                            <constraint firstItem="ggx-Pf-04M" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="cWQ-54-yyJ"/>
+                            <constraint firstItem="DAY-nH-dlx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="jeZ-VC-Zqf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="w6G-a2-iMz" secondAttribute="trailing" constant="117" id="jof-zF-beX"/>
+                            <constraint firstItem="DAY-nH-dlx" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="nIw-hr-hRi"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="w6G-a2-iMz" secondAttribute="bottom" constant="51" id="pVF-g8-EXF"/>
+                            <constraint firstItem="ggx-Pf-04M" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="qUH-CS-5OH"/>
+                            <constraint firstItem="w6G-a2-iMz" firstAttribute="top" secondItem="DAY-nH-dlx" secondAttribute="bottom" constant="87" id="tuE-NK-YD8"/>
+                            <constraint firstItem="us9-WZ-2PK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="y1Y-Tj-PJE"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="counterLabel" destination="DAY-nH-dlx" id="QRY-PK-y9s"/>
+                        <outlet property="startStopButton" destination="w6G-a2-iMz" id="cdS-Om-OIk"/>
+                        <outlet property="trafficLight" destination="ggx-Pf-04M" id="jUk-vG-pca"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-674" y="69"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Road" width="670" height="447"/>
+        <image name="TrafficLight" width="550" height="900"/>
+        <image name="redButton" width="1353" height="1353"/>
+    </resources>
 </document>
